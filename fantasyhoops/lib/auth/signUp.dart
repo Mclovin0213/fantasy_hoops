@@ -13,8 +13,15 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       body: ListView(
         children: [
-          RegistrationForm()
-        ],
+          Padding(
+            padding: EdgeInsets.only(
+                top: 100,
+                left: 20,
+                right: 20
+            ),
+            child: RegistrationForm(),
+          ),
+        ]
       ),
     );
   }
@@ -46,11 +53,16 @@ class _RegistrationFormState extends State<RegistrationForm> {
           TextFormField(
             controller: _emailTC,
             decoration: const InputDecoration(
-
-              prefixIcon: Icon(Icons.account_circle),
-              counterText: " ",
-              labelText: "Email",
-              border: OutlineInputBorder(),
+              focusColor: Colors.white,
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white
+                )
+              ),
+              hintText: "Email",
+              hintStyle: TextStyle(
+                fontSize: 30
+              )
             ),
             onSaved: (val) {
               email = val;
@@ -65,7 +77,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
           TextFormField(
             controller: _passwordTC,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.lock),
+              hintText: "Password",
+              hintStyle: TextStyle(
+                fontSize: 30,
+              ),
               suffixIcon: GestureDetector(
                 child: Icon(
                     _obscureText ? Icons.visibility_off : Icons.visibility
@@ -76,9 +91,6 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   });
                 },
               ),
-              counterText: " ",
-              labelText: "Password",
-              border: OutlineInputBorder(),
             ),
             obscureText: !_obscureText,
             onSaved: (val) {
@@ -92,11 +104,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
             },
           ),
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               prefixIcon: Icon(Icons.lock),
               counterText: " ",
               labelText: "Confirmed Password",
-              border: OutlineInputBorder(),
             ),
             obscureText: true,
             onSaved: (val) {
@@ -128,7 +139,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor:  Color.fromRGBO(159,169,78,1),
+              backgroundColor:  Colors.white,
             ),
             onPressed: (){
               // Navigator.pushReplacement(context,
