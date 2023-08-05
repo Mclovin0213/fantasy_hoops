@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from api import getStandingsInfo
 
 app = Flask(__name__)
 
@@ -8,4 +9,8 @@ def home():
 
 @app.route('/standings', methods=['POST'])
 def standings():
-    pass
+    result = getStandingsInfo()
+    return jsonify(result)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
