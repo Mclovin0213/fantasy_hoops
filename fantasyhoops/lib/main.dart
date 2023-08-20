@@ -1,4 +1,5 @@
 import 'package:fantasyhoops/auth/signUp.dart';
+import 'package:fantasyhoops/initialLeague.dart';
 import 'package:flutter/material.dart';
 import 'package:fantasyhoops/route.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black26),
         useMaterial3: true,
       ),
-      home: const RoutePage(),
+      home: const InitialLeague(),
     );
   }
 }

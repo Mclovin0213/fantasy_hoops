@@ -38,6 +38,10 @@ class _RoutePageState extends State<RoutePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("League Name"),
+        centerTitle: true,
+      ),
       body: Center(
         child: _widgetOptions!.elementAt(_selectedIndex),
       ),

@@ -10,6 +10,7 @@ class JoinLeague extends StatefulWidget {
 class _JoinLeagueState extends State<JoinLeague> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+    );
   }
 }

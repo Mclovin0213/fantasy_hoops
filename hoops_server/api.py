@@ -1,4 +1,5 @@
 from nba_api.stats.endpoints import leaguestandings
+from nba_api.stats.static.players import get_active_players
 
 def getStandings():
 
@@ -36,6 +37,11 @@ def getStandingsInfo():
         result.append(currentTeam)
 
     return result
+
+players = get_active_players()
+
+for player in players:
+    print(player['full_name'])
 
 
 
